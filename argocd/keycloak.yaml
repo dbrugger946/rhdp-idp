@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     path: keycloak
-    repoURL: https://github.com/dbrugger946/rhdh-idp.git
+    repoURL: https://github.com/dbrugger946/rhdp-idp.git
     targetRevision: phase-1-work
   syncPolicy:
     automated:
