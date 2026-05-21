@@ -65,7 +65,7 @@ data:
         - type: config
           clusters:
             - name: openshift-cluster
-              url: https://api.cluster-<GUID>.dynamic.redhatworkshops.io:6443
+              url: https://api.cluster-kxbmt.dynamic2.redhatworkshops.io:6443
               authProvider: serviceAccount
               skipTLSVerify: true
               serviceAccountToken: ${K8S_SA_TOKEN}
@@ -75,4 +75,12 @@ data:
                   plural: 'routes'
     scaffolder:
       github:
-        token: ${GITHUB_TOKEN}                    
+        token: ${GITHUB_TOKEN}   
+    argocd:
+      appLocatorMethods:
+        - type: 'config'
+          instances:
+            - name: argoInstance1
+              url: https://openshift-gitops-server-openshift-gitops.apps.cluster-kxbmt.dynamic2.redhatworkshops.io
+              username: ${ARGOCD_USERNAME}
+              password: ${ARGOCD_PASSWORD}                 

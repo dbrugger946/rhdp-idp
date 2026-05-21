@@ -19,6 +19,8 @@ data:
         disabled: false
       - package: './dynamic-plugins/dist/backstage-plugin-kubernetes-backend-dynamic'
         disabled: false
-      - package: './dynamic-plugins/dist/backstage-community-plugin-redhat-argocd'
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/backstage-community-plugin-argocd-backend:bs_1.45.3__1.0.2
+        disabled: false
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/backstage-community-plugin-argocd@sha256:644eb3120c9f0389743f539055253fcf9583fa145dac5975b701ea4635a91788
         disabled: false
 ...
