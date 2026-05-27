@@ -23,6 +23,4 @@ data:
         disabled: false
       - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/backstage-community-plugin-argocd@sha256:644eb3120c9f0389743f539055253fcf9583fa145dac5975b701ea4635a91788
         disabled: false
-      - package: './dynamic-plugins/dist/roadiehq-scaffolder-backend-argocd-dynamic'
-        disabled: false
 ...

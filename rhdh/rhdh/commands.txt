@@ -20,9 +20,24 @@ git merge phase-2-work
 
 might need to uncommit due to secrets issues
 git reset origin
+and just commit working files
 
+oc edit argocd openshift-gitops -n openshift-gitops
+remove -PipelineRun under resourceExclusions
 
+oc get configmap argocd-cm -n openshift-gitops -o yaml
+to confirm
 
+oc rollout restart deployment openshift-gitops-server -n openshift-gitops
 
+argocd app list
+
+argocd app delete openshift-gitops/springboot-image-build --cascade --yes
+
+argocd app delete openshift-gitops/springboot-app --cascade --yes
+
+using user goldenpath approach
+https://github.com/dbrugger946/RHCourse_RHDH_Golden_Path
+use branch module3
 
 
