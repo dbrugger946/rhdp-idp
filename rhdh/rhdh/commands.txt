@@ -1,0 +1,7 @@
+oc -n demo-project get secret rhdh-k8s-sa-token -o jsonpath="{.data.token}" | base64 -d
+
+argocd app create -f springboot_image.yaml
+
+argocd app create -f springboot_app.yaml 
+
+
