@@ -1,0 +1,28 @@
+Course: Red Hat Learning Portal
+Building Internal Developer Platform (IDP) with Red Hat Developer Hub
+
+
+
+oc -n demo-project get secret rhdh-k8s-sa-token -o jsonpath="{.data.token}" | base64 -d
+
+Module 2
+
+the following are invoked from created artifacts in users github -- spring-boot-reactjs-app-1
+argocd app create -f springboot_image.yaml
+argocd app create -f springboot_app.yaml 
+
+Module 3
+from user copy of course repo
+https://github.com/dbrugger946/rhdp-idp
+
+git checkout -b phase-3-work phase-3-start
+git merge phase-2-work 
+
+might need to uncommit due to secrets issues
+git reset origin
+
+
+
+
+
+

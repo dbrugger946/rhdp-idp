@@ -8,14 +8,14 @@ data:
   app-config.yaml: |
     app:
       title: Red Hat Developer Hub
-      baseUrl: https://rhdh.apps.cluster-<GUID>.dynamic.redhatworkshops.io
+      baseUrl: https://rhdh.apps.cluster-kxbmt.dynamic2.redhatworkshops.io
     backend:
       auth:
         keys:
           - secret: ${BACKEND_SECRET}
-      baseUrl: https://rhdh.apps.cluster-<GUID>.dynamic.redhatworkshops.io
+      baseUrl: https://rhdh.apps.cluster-kxbmt.dynamic2.redhatworkshops.io
       cors:
-        origin: https://rhdh.apps.cluster-<GUID>.dynamic.redhatworkshops.io
+        origin: https://rhdh.apps.cluster-kxbmt.dynamic2.redhatworkshops.io
       reading:
         allow:
           - host: raw.githubusercontent.com
@@ -26,10 +26,10 @@ data:
       providers:
         oidc:
           production:
-            metadataUrl: "https://keycloak-rhdh-operator.apps.cluster-<GUID>.dynamic.redhatworkshops.io/realms/rhdh"
+            metadataUrl: "https://keycloak-rhdh-operator.apps.cluster-kxbmt.dynamic2.redhatworkshops.io/realms/rhdh"
             clientId: rhdh
             clientSecret: developer-hub-secret
-            callbackUrl: https://rhdh.apps.cluster-<GUID>.dynamic.redhatworkshops.io/api/auth/oidc/handler/frame
+            callbackUrl: https://rhdh.apps.cluster-kxbmt.dynamic2.redhatworkshops.io/api/auth/oidc/handler/frame
             prompt: login
             signIn:
               resolvers:
@@ -41,7 +41,7 @@ data:
       providers:
         keycloakOrg:
           default:
-            baseUrl: "https://keycloak-rhdh-operator.apps.cluster-<GUID>.dynamic.redhatworkshops.io"
+            baseUrl: "https://keycloak-rhdh-operator.apps.cluster-kxbmt.dynamic2.redhatworkshops.io"
             loginRealm: "rhdh"
             realm: "rhdh"
             clientId: rhdh
@@ -65,7 +65,7 @@ data:
         - type: config
           clusters:
             - name: openshift-cluster
-              url: https://api.cluster-<GUID>.dynamic.redhatworkshops.io:6443
+              url: https://api.cluster-kxbmt.dynamic2.redhatworkshops.io:6443
               authProvider: serviceAccount
               skipTLSVerify: true
               serviceAccountToken: ${K8S_SA_TOKEN}
@@ -75,13 +75,12 @@ data:
                   plural: 'routes'
     scaffolder:
       github:
-        token: ${GITHUB_TOKEN}                    
-
+        token: ${GITHUB_TOKEN}   
     argocd:
       appLocatorMethods:
-        - type: config
+        - type: 'config'
           instances:
-            - name: default
-              url: https://openshift-gitops-server-openshift-gitops.apps.cluster-<GUID>.dynamic.redhatworkshops.io
-              username: <argocd-username>
-              password: <argocd-password>
+            - name: argoInstance1
+              url: https://openshift-gitops-server-openshift-gitops.apps.cluster-kxbmt.dynamic2.redhatworkshops.io
+              username: ${ARGOCD_USERNAME}
+              password: ${ARGOCD_PASSWORD}                 
