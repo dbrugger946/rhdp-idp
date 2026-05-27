@@ -80,7 +80,7 @@ data:
       appLocatorMethods:
         - type: 'config'
           instances:
-            - name: argoInstance1
+            - name: default
               url: https://openshift-gitops-server-openshift-gitops.apps.cluster-kxbmt.dynamic2.redhatworkshops.io
               username: ${ARGOCD_USERNAME}
               password: ${ARGOCD_PASSWORD}                 
