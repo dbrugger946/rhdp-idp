@@ -1,6 +1,9 @@
 Course: Red Hat Learning Portal
 Building Internal Developer Platform (IDP) with Red Hat Developer Hub
 
+oc rollout restart deployment/my-deployment
+oc rollout restart statefulset/my-statefulset
+oc rollout restart deployment -n my-namespace
 
 
 oc -n demo-project get secret rhdh-k8s-sa-token -o jsonpath="{.data.token}" | base64 -d
